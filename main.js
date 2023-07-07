@@ -1,23 +1,22 @@
 //*****************TALLER DE EJERCICIOS BIT 06/07/2023************/
 
-/* Valor: 0.25 - Convertir una cadena en una lista
+/* EJERCICIO # 7 / Valor 0.25 - El mayor de una lista
+Crea una función llamada max (puede ser normal o función flecha) que reciba un arreglo de números como argumento y retorne el número mayor.
 
-Escriba una función para dividir una cadena y convertirla en una lista de palabras.
-
-Resultados esperados:
-
-Entrada:    "Robin Singh" 
-Salida:     ["Robin", "Singh"]
-
-Entrada:    "Me encantan los arreglos, son mis favoritos"
-Salida:     ["Yo", "amo", "arreglos", "ellos", "son", "mi", "favorito"]
+Nota: No utilices el método Math.max de JavaScript. 
+Código de prueba
+console.log( max( [ 1, 2, 3, 4 ] ) ) // 4
+console.log( max( [ 63, 85, 39, 24, 3 ] ) ) // 85
 */
-
-function cadenaALista(cadena) {
-    var lista = cadena.split(" ");
-    return lista;
+function max(arr) {
+    var maximo = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+      if (arr[i] > maximo) {
+        maximo = arr[i];
+      }
+    }
+    return maximo;
   }
-
-  console.log(cadenaALista("Robin Singh"));
-  console.log(cadenaALista("Me encantan los arreglos, son mis favoritos"));
+  console.log(max([1, 2, 3, 4]));
+  console.log(max([63, 85, 39, 24, 3]));
 
