@@ -1,35 +1,23 @@
 //*****************TALLER DE EJERCICIOS BIT 06/07/2023************/
 
-/* EJERCICIO 4 = 0.25 
-Finalice la función uefaEuro2023() para que devuelva una cadena como en los ejemplos a continuación:
+/* Valor: 0.25 - Convertir una cadena en una lista
 
-Entrada:    uefaEuro2023(['Alemania', 'Ucrania'],[2, 0]) 
-Salida:     "¡En el partido Alemania - Ucrania, ganó Alemania!"
+Escriba una función para dividir una cadena y convertirla en una lista de palabras.
 
-Entrada:     uefaEuro2023(['Belgium', 'Italy'],[0, 2]) 
-Salida:     "¡En el partido Bélgica - Italia, ganó Italia!"
+Resultados esperados:
 
-Entrada:    uefaEuro2023(['Portugal', 'Iceland'],[1, 1]) 
-Saluda:     "En el partido Portugal - Islandia, los equipos empataron".
+Entrada:    "Robin Singh" 
+Salida:     ["Robin", "Singh"]
+
+Entrada:    "Me encantan los arreglos, son mis favoritos"
+Salida:     ["Yo", "amo", "arreglos", "ellos", "son", "mi", "favorito"]
 */
 
-function uefaEuro2023(equipos, resultados) {
-    let equipoLocal = equipos[0];
-    let equipoVisitante = equipos[1];
+function cadenaALista(cadena) {
+    var lista = cadena.split(" ");
+    return lista;
+  }
 
-    let resultadoLocal = resultados[0];
-    let resultadoVisitante = resultados[1];
+  console.log(cadenaALista("Robin Singh"));
+  console.log(cadenaALista("Me encantan los arreglos, son mis favoritos"));
 
-    if(resultadoLocal > resultadoVisitante){
-        return "!En el partido " + equipoLocal + " - " + equipoVisitante + ", gano" + equipoLocal + "!";
-    } else if (resultadoLocal < resultadoVisitante){
-        return "!En el partido " + equipoLocal + " - " + equipoVisitante + ", gano" + equipoVisitante + "!";
-    } else {
-        return "En el partido " + equipoLocal + " - " + equipoVisitante + ", los equipos empataron. "; 
-    }
-   
-}
-
-console.log(uefaEuro2023(['Alemania','Ucrania'], [2, 0]));
-console.log(uefaEuro2023(['Belgium','Italy'], [0, 2]));
-console.log(uefaEuro2023(['Portugal','Iceland'], [1, 1]));
