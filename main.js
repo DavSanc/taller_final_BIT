@@ -1,27 +1,35 @@
 //*****************TALLER DE EJERCICIOS BIT 06/07/2023************/
 
-/* 3. ¿Qué tan bueno eres realmente?*
-Hubo un examen en tu clase y lo pasaste. ¡Felicidades! Pero eres una persona ambiciosa.
-Quiere saber si es mejor que el estudiante promedio de su clase.
-Recibe una lista con los puntajes de las pruebas de sus compañeros.
-¡Ahora calcule el promedio y compare su puntaje!
-¡Devuelve True si estás mejor, de lo contrario False!
-Nota: Sus puntos no están incluidos en la lista de puntos de su clase. 
-¡Para calcular el punto promedio, puede agregar su punto
-a la lista dada!
+/* EJERCICIO 4 = 0.25 
+Finalice la función uefaEuro2023() para que devuelva una cadena como en los ejemplos a continuación:
+
+Entrada:    uefaEuro2023(['Alemania', 'Ucrania'],[2, 0]) 
+Salida:     "¡En el partido Alemania - Ucrania, ganó Alemania!"
+
+Entrada:     uefaEuro2023(['Belgium', 'Italy'],[0, 2]) 
+Salida:     "¡En el partido Bélgica - Italia, ganó Italia!"
+
+Entrada:    uefaEuro2023(['Portugal', 'Iceland'],[1, 1]) 
+Saluda:     "En el partido Portugal - Islandia, los equipos empataron".
 */
 
-function mejorPuntaje(puntajes, tuPuntaje) {
-    let suma = 0;
-    let totalPuntajes = puntajes.length + 1;
-    for (let i = 0; i < puntajes.length; i++) {
-        suma += puntajes[i];
+function uefaEuro2023(equipos, resultados) {
+    let equipoLocal = equipos[0];
+    let equipoVisitante = equipos[1];
+
+    let resultadoLocal = resultados[0];
+    let resultadoVisitante = resultados[1];
+
+    if(resultadoLocal > resultadoVisitante){
+        return "!En el partido " + equipoLocal + " - " + equipoVisitante + ", gano" + equipoLocal + "!";
+    } else if (resultadoLocal < resultadoVisitante){
+        return "!En el partido " + equipoLocal + " - " + equipoVisitante + ", gano" + equipoVisitante + "!";
+    } else {
+        return "En el partido " + equipoLocal + " - " + equipoVisitante + ", los equipos empataron. "; 
     }
-    let promedioClase = (suma + tuPuntaje) / totalPuntajes;
-    return tuPuntaje > promedioClase
+   
 }
 
-let puntajesCompaneros = [3.5, 2.8, 4.5];
-let tuPuntaje = 4.6;
-let resultado = mejorPuntaje(puntajesCompaneros, tuPuntaje)
-console.log(resultado);
+console.log(uefaEuro2023(['Alemania','Ucrania'], [2, 0]));
+console.log(uefaEuro2023(['Belgium','Italy'], [0, 2]));
+console.log(uefaEuro2023(['Portugal','Iceland'], [1, 1]));
