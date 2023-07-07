@@ -1,22 +1,25 @@
 //*****************TALLER DE EJERCICIOS BIT 06/07/2023************/
 
-/* EJERCICIO # 7 / Valor 0.25 - El mayor de una lista
-Crea una función llamada max (puede ser normal o función flecha) que reciba un arreglo de números como argumento y retorne el número mayor.
+/* EJERCICIO #8 / Valor: 0.25 - Sumar dos listas de igual longitud
+Suma de dos listas: Dadas dos listas de números del mismo tamaño, crea una función en JavaScript que recorra ambas listas y
+devuelva una nueva lista donde cada elemento sea la suma de los elementos correspondientes de las dos listas.
+Entrada:    [ 3, 5, 7, -3, 9, 2 ]
+            [ 5, -4, 7, 3, 5, 1 ]
+Salida:     [ 8, 1, 14, 0, 14, 3 ]
 
-Nota: No utilices el método Math.max de JavaScript. 
-Código de prueba
-console.log( max( [ 1, 2, 3, 4 ] ) ) // 4
-console.log( max( [ 63, 85, 39, 24, 3 ] ) ) // 85
 */
-function max(arr) {
-    var maximo = arr[0];
-    for (var i = 1; i < arr.length; i++) {
-      if (arr[i] > maximo) {
-        maximo = arr[i];
-      }
+
+function sumaListas(lista1, lista2) {
+    let resultado = [];
+    for (let i = 0; i < lista1.length; i++){
+        resultado.push(lista1[1] + lista2[1]);
     }
-    return maximo;
-  }
-  console.log(max([1, 2, 3, 4]));
-  console.log(max([63, 85, 39, 24, 3]));
+    return resultado;
+}
+
+let lista1 = [3, 5, 7, -3, 9, 2];
+let lista2 = [5, -4, 7, 3, 5, 1];
+let resultado = sumaListas(lista1, lista2);
+console.log(resultado);
+
 
